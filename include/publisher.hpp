@@ -14,13 +14,14 @@ using namespace std::chrono;
 
 class PublishPosition {
   public :
-    PublishPosition();
+    PublishPosition(int i);
     ~PublishPosition();
-    void threadPublisher();
+    void threadPublisher(int i);
 
   private:
     ros::NodeHandle nh;
-    std::vector<ros::Publisher> pub_robot_pose;
+    //std::vector<ros::Publisher> pub_robot_pose;
+    ros::Publisher pub_robot_pose;
     int total_robots;
     std::mutex mtx;
 

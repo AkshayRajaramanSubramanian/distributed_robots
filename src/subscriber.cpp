@@ -36,7 +36,7 @@ void SubscribePosition::displayPosition() {
 }
 
 int main(int argc, char **argv) {
-  ros::init(argc, argv, "robot_position_subscriber");
+  ros::init(argc, argv, "robot_position_subscribe");
   SubscribePosition *node = new SubscribePosition();
   ros::Rate *rate = new ros::Rate(20);
 

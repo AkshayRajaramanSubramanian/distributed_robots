@@ -1,0 +1,14 @@
+<launch>
+
+   <!-- start node with a node number-->
+   <arg name="nr" default="99"/>
+   <group ns="$(eval 'robot' + str(arg('nr')))">
+      <node name="publisher_positions" pkg="distributed_robots" type="publisher_positions" args = "$(arg nr)"/>
+   </group>
+
+   <!-- recursively start new node until a particular nod number-->
+   <include file="$(find distributed_robots)/launch/system.launch" if="$(eval arg('nr') - 1 > 49)">
+       <arg name="nr" value="$(eval arg('nr') - 1)"/>
+   </include>
+
+</launch>

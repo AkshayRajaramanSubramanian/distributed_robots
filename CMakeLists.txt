@@ -20,8 +20,8 @@ catkin_package(CATKIN_DEPENDS message_runtime)
 
 include_directories(include ${catkin_INCLUDE_DIRS})
 
-add_executable(publish_positions src/publisher.cpp)
-target_link_libraries(publish_positions ${catkin_LIBRARIES})
+add_executable(publisher_positions src/publisher.cpp)
+target_link_libraries(publisher_positions ${catkin_LIBRARIES})
 
 add_executable(subscribe_positions src/subscriber.cpp)
 target_link_libraries(subscribe_positions ${catkin_LIBRARIES})
